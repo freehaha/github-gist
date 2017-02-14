@@ -10,10 +10,10 @@
   Polymer({
     is: 'github-gist',
     properties: {
-      gistid: {
+      gistId: {
         type: String,
         value: null,
-        observer: 'gistidChanged'
+        observer: 'gistIdChanged'
       },
       stylesheet: {
         type: String,
@@ -30,7 +30,7 @@
       }
     },
 
-    gistidChanged: function() {
+    gistIdChanged: function() {
       this.loadJSON();
     },
 
@@ -45,7 +45,7 @@
     },
 
     loadJSON: function() {
-      var url = 'https://gist.github.com/' + this.gistid + '.json';
+      var url = 'https://gist.github.com/' + this.gistId + '.json';
       this.jsonp(url, this.processResponse.bind(this));
     },
 
@@ -66,7 +66,7 @@
 
       var _event = {
         name: 'github-gist-ready',
-        detail: {gistId: this.gistid}
+        detail: {gistId: this.gistId}
       };
       this.fireEvent(_event);
     },

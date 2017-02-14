@@ -7,7 +7,7 @@
   <link rel="import" href="../github-gist.html">
 </head>
 <body>
-  <github-gist gistid="e54a2ed1b12934d3e134"></github-gist>
+  <github-gist gist-id="e54a2ed1b12934d3e134"></github-gist>
 
   <script>
 
@@ -24,7 +24,7 @@
           var stylePart = 'https://assets-cdn.github.com/assets/gist-embed-';
 
           flush(function() {
-            expect(githubGist.gistid).to.be.equal(e.detail.gistId);
+            expect(githubGist.gistId).to.be.equal(e.detail.gistId);
 
             expect(githubGist.defaultStylesheet).to.be.not.empty;
             expect(githubGist.defaultStylesheet).to.be.equal(githubGist.stylesheet);
@@ -43,8 +43,8 @@
         });
       }
 
-      it('should display gist if gistid property changed and it\'s VALID', function(done) {
-        githubGist.setAttribute('gistid', 'a772e7d43f623e1109e4');
+      it('should display gist if gistId property changed and it\'s VALID', function(done) {
+        githubGist.setAttribute('gistId', 'a772e7d43f623e1109e4');
         testValidGist(done);
       });
     });
